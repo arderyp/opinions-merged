@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+
+{% block content %}
+
+  <div class="row author-header">
+    <div class="small-6 columns text-right">
+      <a href="{{ author.wikipedia_url() }}">
+        <img src="{{ url_for("static", filename="img/" + author.id + ".jpg") }}">
+      </a>
+    </div>
+    <div class="small-6 columns text-left">
+      <h4><a href="{{ author.wikipedia_url() }}">{{ author.name }}</a></h4>
+      <table>
+        <tr>
+          <td>Opinions Authored</td>
+          <td>{{ author.opinions.count() }}</td>
+        </tr>
+        <tr>
+          <td>Total URLs</td>
+          <td>{{ urls.count() }}</td>
+        </tr>
+        <tr>
+          <td>Average URLs per Opinion</td>
+          <td>{{ author.url_ratio() }}</td>
+      </table>
+    </div>
+  </div>
+  
+  <br>
+
+  <div class="row">
+    <h3>URLs</h3>
+    <table width="100%">
+      <tr>
+        <th>URL</th>
+        <th>Date Published</th>
+        <th>Opinion</th>
+      </tr>
+      {% for u in urls %}
+      <tr>
+        <td><a href="{{ u.url }}">{{ u.url|wordwrap(80, wrapstring="<br>")|safe }}</a></td>
+        <td>{{ u.opinion.published.strftime("%Y-%m-%d") }}</td>
+        <td><a href="{{ u.opinion.pdf_url }}">{{ u.opinion.name }}</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+{% endblock %}

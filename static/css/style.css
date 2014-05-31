@@ -1,0 +1,46 @@
+body {
+  font-family: 'EB Garamond', serif;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 10px;
+}
+
+a {
+    color: black;
+    text-decoration: underline;
+}
+
+header img {
+  vertical-align: top;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 40px;
+}
+  
+header {
+  font-family: 'EB Garamond', serif;
+  font-weight: bold;
+  font-size: 30pt;
+  vertical-align: top;
+  text-align: center;
+}
+
+header a:hover {
+    color: red;
+}
+
+header a {
+    text-decoration: none;
+}
+
+th {
+  text-align: left;
+}
+
+p {
+  font-size: 16pt;
+}
+
+#author-chart {
+  text-align: center;
+}

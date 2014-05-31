@@ -1,0 +1,77 @@
+body {
+  font-family: 'EB Garamond', serif;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 10px;
+}
+
+header img {
+  vertical-align: middle;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+  
+header {
+  font-family: 'EB Garamond', serif;
+  font-weight: bold;
+  font-size: 30pt;
+  vertical-align: top;
+  text-align: center;
+}
+
+header a {
+  color: black;
+}
+
+header a:hover {
+    color: red;
+}
+
+header a {
+    text-decoration: none;
+}
+
+th {
+  text-align: left;
+}
+
+p {
+  font-size: 16pt;
+}
+
+#author-chart {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#pie {
+}
+
+#legend {
+  margin-left: 5%;
+}
+
+.legend-text {
+  cursor: pointer;
+}
+
+.legend-bar {
+  cursor: pointer;
+}
+
+.arc {
+  cursor: pointer;
+}
+
+table {
+    word-wrap: break-word;
+}
+
+table td {
+    vertical-align: top;
+}
+
+.author-header img {
+  height: 175px;
+}
+

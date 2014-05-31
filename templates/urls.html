@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="row">
+    <table>
+      <tr>
+        <th>URL</th>
+        <th>Date Published</th>
+        <th>Opinion</th>
+	<th>Library of Congress</th>
+	<th>Internet Archive</th>
+      </tr>
+      {% for u in urls %}
+      <tr>
+        <td class="resource"><a href="{{ u.url }}">{{ u.url }}</a>&emsp;<button onclick="editLink('{{ u.url }}')">Edit</button></td>
+        <td class="date">{{ u.opinion.published.strftime("%Y-%m-%d") }}</td>
+        <td class="opinion"><a href="{{ u.opinion.pdf_url }}">{{ u.opinion.name }}</a></td>
+	<td align="center" class="libraryofcongress">
+          <a href="{{ loc + u.url }}" title="view source at Library of Congress">
+            <button style="vertical-align:bottom">
+              <img style="border: 1px solid black; border-radius: 30px; -moz-border-radius: 30px; -khtml-border-radius: 30px; -webkit-border-radius: 30px; background-color:{{ u.lcBG }};" src="http://allindstrom.com/wordpress/wp-content/uploads/2013/02/url9.png" alt="Library of Congress" height="30" width="30">
+            </button>
+          </a>
+        </td>
+	<td align="center" class="internetarchive">
+          <a href="{{ ia + u.url }}" title="view source at Internet Archive">
+            <button>
+              <img style="border: 1px solid black; border-radius: 30px; -moz-border-radius: 30px; -khtml-border-radius: 30px; -webkit-border-radius: 30px; background-color:{{ u.iaBG }};" src="http://img3.wikia.nocookie.net/__cb20130907083812/logopedia/images/a/a7/Internet_Archive_logo_and_wordmark.png" alt="Internet Archive" height="30" width="30">
+            </button>
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+{% endblock %}
