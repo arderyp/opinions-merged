@@ -23,7 +23,7 @@ app.config['PROPAGATE_EXCEPTIONS'] = True
 def checkArchives(url):
         UA = "Opinions <http://github.com/edsu/opinions>"
         loc = "http://loc-wm.archive.org/all/*/" + url
-        ia = "https://web.archive.org/web/*/" + url
+        ia = "http://web.archive.org/web/*/" + url
         white = '#FFFFFF'
         green = '#A9F5A9'
         bg_colors = []
@@ -132,7 +132,7 @@ def opinions():
 @app.route('/urls/')
 def urls():
     loc = "http://loc-wm.archive.org/all/*/"
-    ia = "https://web.archive.org/web/*/"
+    ia = "http://web.archive.org/web/*/"
     urls = ExternalUrl.query.join(Opinion).order_by(Opinion.published.desc())
     return flask.render_template('urls.html', urls=urls, ia=ia, loc=loc)
 

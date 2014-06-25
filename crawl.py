@@ -158,7 +158,7 @@ def get_urls_from_text(text):
     # imperfect heuristics for massaging the text so we can get urls out 
     # in a fairly predictable manner
     text = remove_newlines(text)
-    urls = re.findall('http:[^ ]+', text)
+    urls = re.findall('http[^ ]+', text)
     urls = remove_weird_extensions(urls)
     urls = remove_trailing_punctuation(urls)
     return urls
